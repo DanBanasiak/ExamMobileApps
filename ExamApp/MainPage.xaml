@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ExamApp.MainPage">
+
+    <ScrollView BackgroundColor="#5F9EA0">
+        <Grid Padding="30">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Label Grid.Row="0" Grid.Column="0" Text="Numer" VerticalOptions="Center"/>
+                <Entry Grid.Row="0" Grid.Column="1" VerticalOptions="Center" HorizontalOptions="FillAndExpand" x:Name="IdEntry"
+                       TextChanged="IdEntry_TextChanged"
+                       />
+
+                <Label Grid.Row="1" Grid.Column="0" VerticalOptions="Center" Text="Imie"/>
+                <Entry Grid.Row="1" Grid.Column="1" VerticalOptions="Center" HorizontalOptions="FillAndExpand" x:Name="NameEntry"/>
+
+                <Label Grid.Row="2" Grid.Column="0" VerticalOptions="Center" Text="Nazwisko"/>
+                <Entry Grid.Row="2" Grid.Column="1" VerticalOptions="Center" HorizontalOptions="FillAndExpand" x:Name="SurnameEntry"/>
+                
+            </Grid>
+            <StackLayout Grid.Row="1" VerticalOptions="Center">
+                <RadioButton Content="niebieskie" GroupName="OptionsGroup" IsChecked="True" x:Name="BlueButton"/>
+                <RadioButton Content="zielone" GroupName="OptionsGroup" x:Name="GreenButton"/>
+                <RadioButton Content="piwne" GroupName="OptionsGroup" x:Name="BeerButton"/>
+            </StackLayout>
+
+            <Grid Grid.Row="0" Grid.RowSpan="2" Grid.Column="1" HorizontalOptions="FillAndExpand">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <HorizontalStackLayout Spacing="30" Padding="20" Grid.Row="0">
+                    <Image x:Name="PersonImage" HeightRequest="180" />
+                    <Image x:Name="SignImage" HeightRequest="180"/>
+                </HorizontalStackLayout>
+                <Button Text="OK" VerticalOptions="CenterAndExpand" HorizontalOptions="Fill" Padding="20" Clicked="CompleteButton_Clicked" x:Name="CompleteButton" Grid.Row="1"/>
+            </Grid>
+
+        </Grid>
+
+
+    </ScrollView>
+
+</ContentPage>
